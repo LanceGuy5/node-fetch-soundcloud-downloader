@@ -4,6 +4,7 @@ import { AxiosInstance } from 'axios'
 import m3u8stream from 'm3u8stream'
 import { handleRequestErrs, appendURL } from './util'
 import getInfo, { Transcoding } from './info'
+import fetch from 'node-fetch';
 
 export const getMediaURL = async (url: string, clientID: string, axiosInstance: AxiosInstance): Promise<string> => {
   const res = await axiosInstance.get(appendURL(url, 'client_id', clientID), {
@@ -69,11 +70,9 @@ export const fromMediaObj = async (media: Transcoding, clientID: string, axiosIn
 
 export const fromDownloadLink = async (id: number, clientID: string, axiosInstance: AxiosInstance) => {
   const { data: { redirectUri } } = await axiosInstance.get(appendURL(`https://api-v2.soundcloud.com/tracks/${id}/download`, 'client_id', clientID))
-  const { data } = await axiosInstance.get(redirectUri, {
-    responseType: 'stream'
-  })
+  const { body } = await fetch(redirectUri);
 
-  return data
+  return body;
 }
 
 /** @internal */

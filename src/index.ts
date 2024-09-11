@@ -164,7 +164,7 @@ export class SCDL {
    * Returns the audio streams and titles of the tracks in the given playlist.
    * @param url - The url of the playlist
    */
-  async downloadPlaylist (url: string): Promise<[ReadableStream<any>[], String[]]> {
+  async downloadPlaylist (url: string): Promise<[NodeJS.ReadableStream[], String[]]> {
     return downloadPlaylist(await this.prepareURL(url), await this.getClientID(), this.axios)
   }
 
