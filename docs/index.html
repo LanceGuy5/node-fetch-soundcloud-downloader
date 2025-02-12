@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>soundcloud-downloader</title>
-	<meta name="description" content="Documentation for soundcloud-downloader">
+	<title>node-fetch-sd</title>
+	<meta name="description" content="Documentation for node-fetch-sd">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
 	<script async src="assets/js/search.js" id="search-script"></script>
@@ -23,7 +23,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">soundcloud-downloader</a>
+					<a href="index.html" class="title">node-fetch-sd</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -50,7 +50,7 @@
 	</div>
 	<div class="tsd-page-title">
 		<div class="container">
-			<h1>soundcloud-downloader</h1>
+			<h1>node-fetch-sd</h1>
 		</div>
 	</div>
 </header>
@@ -59,111 +59,12 @@
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
 				<p><img src="https://socialify.git.ci/zackradisic/node-soundcloud-downloader/image?font=Raleway&language=1&owner=1&stargazers=1&theme=Dark" alt="node-soundcloud-downloader"></p>
-				<p><a href="https://github.com/zackradisic"><img src="https://img.shields.io/badge/Author-Zack%20Radisic-green" alt="Zack Radisic"></a>
-					<a href="https://www.npmjs.com/package/soundcloud-downloader"><img src="https://img.shields.io/npm/dt/soundcloud-downloader" alt="downloads"></a>
-				<img src="https://github.com/zackradisic/node-soundcloud-downloader/workflows/Node.js%20CI/badge.svg" alt="Node.js CI"></p>
+				<p><a href="https://github.com/LanceGuy5"><img src="https://img.shields.io/badge/Author-lancehar-green" alt="lancehar"></a>
+				<a href="https://www.npmjs.com/package/node-fetch-sd"><img src="https://img.shields.io/npm/dt/node-fetch-sd" alt="downloads"></a></p>
 				<p>Download Soundcloud tracks with Node.js</p>
-				<pre><code><span style="color: #001080">npm</span><span style="color: #000000"> </span><span style="color: #001080">install</span><span style="color: #000000"> </span><span style="color: #001080">soundcloud</span><span style="color: #000000">-</span><span style="color: #001080">downloader</span>
+				<pre><code><span style="color: #001080">npm</span><span style="color: #000000"> </span><span style="color: #001080">install</span><span style="color: #000000"> </span><span style="color: #001080">node</span><span style="color: #000000">-</span><span style="color: #001080">fetch</span><span style="color: #000000">-</span><span style="color: #001080">sd</span>
 </code></pre>
-				<p>I couldn&#39;t find any packages that worked with a Discord bot I was working on so I created my own.</p>
-				<a href="#features" id="features" style="color: inherit; text-decoration: none;">
-					<h4>Features</h4>
-				</a>
-				<ul>
-					<li>Extremely fast (interacts directly with the Soundcloud API)</li>
-					<li>Download/manipulate audio from Soundcloud (it is returned as a <a href="https://nodejs.org/api/stream.html">stream</a>)</li>
-					<li>Get information about <a href="https://zackradisic.github.io/node-soundcloud-downloader/classes/_index_.scdl.html#getinfo">tracks</a> and <a href="https://zackradisic.github.io/node-soundcloud-downloader/classes/_index_.scdl.html#getsetinfo">playlists</a></li>
-					<li><a href="https://zackradisic.github.io/node-soundcloud-downloader/classes/_index_.scdl.html#filtermedia">Filter</a> and <a href="https://zackradisic.github.io/node-soundcloud-downloader/classes/_index_.scdl.html#downloadformat">download</a> specific formats</li>
-					<li><a href="https://zackradisic.github.io/node-soundcloud-downloader/classes/_index_.scdl.html#search">Search</a> and find <a href="https://zackradisic.github.io/node-soundcloud-downloader/classes/_index_.scdl.html#related">related</a> tracks/playlists/albums/users</li>
-				</ul>
-				<a href="#table-of-contents" id="table-of-contents" style="color: inherit; text-decoration: none;">
-					<h4>Table of Contents</h4>
-				</a>
-				<ul>
-					<li><a href="#api">API</a></li>
-					<li><a href="#examples">Examples</a></li>
-					<li><a href="#client-id">Obtaining a Client ID</a></li>
-					<li><a href="#to-do">To do</a></li>
-				</ul>
-				<a href="#api--documentation" id="api--documentation" style="color: inherit; text-decoration: none;">
-					<h2>API / <a href="https://zackradisic.github.io/node-soundcloud-downloader/classes/_index_.scdl.html">Documentation</a></h2>
-				</a>
-				<p>Here are the two most commonly used functions:</p>
-				<a href="#scdldownloadurl-clientid" id="scdldownloadurl-clientid" style="color: inherit; text-decoration: none;">
-					<h3><a href="https://zackradisic.github.io/node-soundcloud-downloader/classes/_index_.scdl.html#download">scdl.download(url, clientID?)</a></h3>
-				</a>
-				<ul>
-					<li>Gets the audio from the given URL, returns a <a href="https://nodejs.org/api/stream.html#stream_class_stream_readable">ReadableStream</a>.</li>
-				</ul>
-				<a href="#scdlgetinfourl-clientid" id="scdlgetinfourl-clientid" style="color: inherit; text-decoration: none;">
-					<h3><a href="https://zackradisic.github.io/node-soundcloud-downloader/classes/_index_.scdl.html#getinfo">scdl.getInfo(url, clientID?)</a></h3>
-				</a>
-				<ul>
-					<li>Returns a JSON object containing the track&#39;s information, as well as media links.</li>
-				</ul>
-				<p>Read the <a href="https://zackradisic.github.io/node-soundcloud-downloader/classes/_index_.scdl.html">docs</a> for more.</p>
-				<a href="#examples" id="examples" style="color: inherit; text-decoration: none;">
-					<h2>Examples</h2>
-				</a>
-				<p>The easiest way to get Soundcloud audio is with the <code>scdl.download(url: string)</code> function, which returns a Promise containing a ReadableStream.</p>
-				<pre><code class="language-javascript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">scdl</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;soundcloud-downloader&#039;</span><span style="color: #000000">).</span><span style="color: #001080">default</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">fs</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;fs&#039;</span><span style="color: #000000">)</span>
-
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">SOUNDCLOUD_URL</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;https://soundcloud.com/askdjfhaklshf&#039;</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">CLIENT_ID</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;asdhkalshdkhsf&#039;</span>
-
-<span style="color: #001080">scdl</span><span style="color: #000000">.</span><span style="color: #795E26">download</span><span style="color: #000000">(</span><span style="color: #0070C1">SOUNDCLOUD_URL</span><span style="color: #000000">).</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #001080">stream</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #001080">stream</span><span style="color: #000000">.</span><span style="color: #795E26">pipe</span><span style="color: #000000">(</span><span style="color: #001080">fs</span><span style="color: #000000">.</span><span style="color: #795E26">createWriteStream</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;audio.mp3&#039;</span><span style="color: #000000">)))</span>
-</code></pre>
-				<p>You can do anything you like with the stream that is returned, an example with <a href="https://github.com/discordjs/discord.js/">Discord.js</a>:</p>
-				<pre><code class="language-javascript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">client</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #001080">Discord</span><span style="color: #000000">.</span><span style="color: #795E26">Client</span><span style="color: #000000">()</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">url</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;https://soundcloud.com/taliya-jenkins/double-cheese-burger-hold-the&#039;</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">clientID</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;asdlkajasd&#039;</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">channelID</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;123456789&#039;</span>
-<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;ready&#039;</span><span style="color: #000000">, () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
-<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">channel</span><span style="color: #000000"> = </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">channels</span><span style="color: #000000">.</span><span style="color: #001080">cache</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #001080">channelID</span><span style="color: #000000">)</span>
-<span style="color: #000000">  </span><span style="color: #001080">channel</span><span style="color: #000000">.</span><span style="color: #795E26">join</span><span style="color: #000000">().</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #001080">connection</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
-<span style="color: #000000">    </span><span style="color: #001080">scdl</span><span style="color: #000000">.</span><span style="color: #795E26">download</span><span style="color: #000000">(</span><span style="color: #001080">url</span><span style="color: #000000">, </span><span style="color: #001080">clientID</span><span style="color: #000000">).</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #001080">stream</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
-<span style="color: #000000">      </span><span style="color: #001080">connection</span><span style="color: #000000">.</span><span style="color: #795E26">play</span><span style="color: #000000">(</span><span style="color: #001080">stream</span><span style="color: #000000">)</span>
-<span style="color: #000000">    })</span>
-<span style="color: #000000">  })</span>
-<span style="color: #000000">})</span>
-</code></pre>
-				<p>You can also create a custom instance of the SCDL class with settings configured to your liking:</p>
-				<pre><code class="language-javascript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">scdlCreate</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;../&#039;</span><span style="color: #000000">).</span><span style="color: #001080">create</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">axios</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;axios&#039;</span><span style="color: #000000">).</span><span style="color: #001080">default</span>
-
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">scdl</span><span style="color: #000000"> = </span><span style="color: #795E26">scdlCreate</span><span style="color: #000000">({</span>
-<span style="color: #000000">  </span><span style="color: #001080">clientID:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;adasdasd&#039;</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #001080">saveClientID:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #001080">filePath:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;./client_id.json&#039;</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #001080">axiosInstance:</span><span style="color: #000000"> </span><span style="color: #001080">axios</span><span style="color: #000000">.</span><span style="color: #795E26">create</span><span style="color: #000000">()</span>
-<span style="color: #000000">})</span>
-</code></pre>
-				<p>You can view the code for these examples and find more in the <a href="example">example</a> folder.</p>
-				<a href="#client-id" id="client-id" style="color: inherit; text-decoration: none;">
-					<h2>Client ID</h2>
-				</a>
-				<p>You can obtain a Client ID by visting the Soundcloud website and inspecting network traffic (perhaps with Chrome DevTools or some HTTP proxy software) and looking for any requests to the Soundcloud API. Ex:</p>
-				<pre><code><span style="color: #000000">https:</span><span style="color: #008000">//api-v2.soundcloud.com/me/play-history/tracks?client_id={CLIENT ID IS HERE}&amp;limit=25&amp;offset=0&amp;linked_partitioning=1&amp;app_version=1590494738&amp;app_locale=en</span>
-</code></pre>
-				<p>Here is a picture of where you should be able to find it:
-				<img src="img/clientid.png" alt=""></p>
-				<a href="#to-do" id="to-do" style="color: inherit; text-decoration: none;">
-					<h2>To-do</h2>
-				</a>
-				<p>If I have the time and there is enough demand, I am interested in implementing the following functionalities:</p>
-				<ul>
-					<li>Audio format selection ✅</li>
-					<li>Ability to use HTTP Live Streaming (HLS) ✅</li>
-					<li>Some more integrations with Discord.js like selecting best format for voice channels</li>
-				</ul>
-				<p>If you have any feature requests, suggestions or questions do not hesistate to post them in the issues section</p>
-				<a href="#disclaimer" id="disclaimer" style="color: inherit; text-decoration: none;">
-					<h2>Disclaimer</h2>
-				</a>
-				<p>I do not support piracy and this package is not designed for circumventing the technological measures employed
-					by SoundCloud preventing unauthorized access to copyrighted works. This package is only for downloading
-				audio you have access to.</p>
+				<p>This package is a fork of <a href="github.com/zackradisic/node-soundcloud-downloader">soundcloud-downloader</a>, and all documentation can be found at the original repository. The primary difference between the two is that this package can run on a node backend, while the original is designed for use in the browser.</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -198,6 +99,9 @@
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/url.html">url</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/user.html">user</a>
 					</li>
 				</ul>
 			</nav>

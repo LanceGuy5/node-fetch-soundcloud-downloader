@@ -44,6 +44,7 @@ exports.download = exports.fromDownloadLink = exports.fromMediaObj = exports.fro
 var m3u8stream_1 = __importDefault(require("m3u8stream"));
 var util_1 = require("./util");
 var info_1 = __importDefault(require("./info"));
+var node_fetch_1 = __importDefault(require("node-fetch"));
 var getMediaURL = function (url, clientID, axiosInstance) { return __awaiter(void 0, void 0, void 0, function () {
     var res;
     return __generator(this, function (_a) {
@@ -130,18 +131,16 @@ var fromMediaObj = function (media, clientID, axiosInstance) { return __awaiter(
 }); }); };
 exports.fromMediaObj = fromMediaObj;
 var fromDownloadLink = function (id, clientID, axiosInstance) { return __awaiter(void 0, void 0, void 0, function () {
-    var redirectUri, data;
+    var redirectUri, body;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0: return [4 /*yield*/, axiosInstance.get(util_1.appendURL("https://api-v2.soundcloud.com/tracks/" + id + "/download", 'client_id', clientID))];
             case 1:
                 redirectUri = (_a.sent()).data.redirectUri;
-                return [4 /*yield*/, axiosInstance.get(redirectUri, {
-                        responseType: 'stream'
-                    })];
+                return [4 /*yield*/, node_fetch_1["default"](redirectUri)];
             case 2:
-                data = (_a.sent()).data;
-                return [2 /*return*/, data];
+                body = (_a.sent()).body;
+                return [2 /*return*/, body];
         }
     });
 }); };

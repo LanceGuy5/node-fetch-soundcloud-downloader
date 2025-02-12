@@ -83,7 +83,6 @@ var getInfoBase = function (url, clientID, axiosRef) { return __awaiter(void 0, 
                 return [2 /*return*/, res.data];
             case 2:
                 err_2 = _a.sent();
-                console.log(err_2);
                 throw util_1.handleRequestErrs(err_2);
             case 3: return [2 /*return*/];
         }
